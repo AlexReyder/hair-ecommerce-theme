@@ -1,0 +1,52 @@
+.editor-styles-wrapper {
+  .nh-home-about-us {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+    max-width: none !important;
+
+    .wp-block-group,
+    .wp-block-image,
+    .wp-block-spacer,
+    p,
+    h2,
+    h3,
+    figure {
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+
+    .block-editor-block-list__layout,
+    .block-editor-inner-blocks,
+    .wp-block-group__inner-container {
+      width: 100%;
+      max-width: none;
+    }
+
+    .is-layout-constrained
+      > :where(:not(.alignleft):not(.alignright):not(.alignfull)) {
+      max-width: none !important;
+      margin-left: 0 !important;
+      margin-right: 0 !important;
+    }
+
+    .wp-block-image img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .rich-text {
+      max-width: 100%;
+    }
+
+    [data-rich-text-placeholder] {
+      min-width: 1ch;
+    }
+  }
+
+  .wp-block[data-align="full"] > .nh-home-about-us,
+  .nh-home-about-us.alignfull {
+    max-width: none !important;
+  }
+}

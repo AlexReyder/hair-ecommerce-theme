@@ -1,9 +1,8 @@
 @use "abstracts/variables";
 @use "editor/base";
-
-// reuse frontend styles for One Brand inside Gutenberg
 @use "sections/home/one-brand";
-
-// editor-only adjustments
 @use "./editor/home-hero";
 @use "./editor/home-one-brand";
+@use "components/text-link";
+@use "sections/home/about-us";
+@use "./editor/home-about-us";
