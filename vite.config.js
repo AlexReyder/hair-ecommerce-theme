@@ -2,6 +2,9 @@ import { defineConfig } from "vite";
 import path from "node:path";
 
 const themeRoot = __dirname;
+const devHost = process.env.VITE_DEV_HOST || "localhost";
+const devPort = Number(process.env.VITE_DEV_PORT || 5173);
+const devOrigin = process.env.VITE_DEV_ORIGIN || `http://${devHost}:${devPort}`;
 
 export default defineConfig({
   root: themeRoot,
@@ -9,14 +12,14 @@ export default defineConfig({
   publicDir: false,
 
   server: {
-    host: "localhost",
-    port: 5174,
+    host: true,
+    port: devPort,
     strictPort: true,
-    origin: "http://localhost:5174",
+    origin: devOrigin,
     hmr: {
-      host: "localhost",
-      port: 5174,
-      protocol: "ws",
+      host: devHost,
+      port: devPort,
+      protocol: devOrigin.startsWith("https") ? "wss" : "ws",
     },
   },
 
