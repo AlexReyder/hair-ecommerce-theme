@@ -1,45 +1,81 @@
 .nh-home-hero {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
   min-height: 100vh;
   min-height: 100svh;
   min-height: 100dvh;
+  margin: 0 !important;
   color: #fff;
   background-color: #0f0f10;
 
-  > .wp-block-cover__inner-container {
-    width: 100%;
-    min-height: inherit;
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
   }
 
   .wp-block-cover__background {
     opacity: 1 !important;
   }
 
+  .wp-block-cover__image-background {
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
+
+  > .wp-block-cover__inner-container {
+    width: 100%;
+    max-width: none !important;
+    min-height: inherit;
+    padding: 0 !important;
+  }
+
+  .wp-block-group,
+  .wp-block-buttons,
+  .wp-block-button,
+  .wp-block-cover__inner-container,
+  p,
+  h1,
+  h2,
+  figure {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  .is-layout-constrained
+    > :where(:not(.alignleft):not(.alignright):not(.alignfull)) {
+    max-width: none !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+
   &__shell {
     position: relative;
     z-index: 1;
-    width: min(100% - 72px, 1496px);
+    width: min(calc(100% - 64px), 1528px);
     min-height: inherit;
     margin: 0 auto;
-    padding: 28px 0 24px;
+    padding: 27px 0 22px;
     display: grid;
     grid-template-rows: auto 1fr auto;
-    gap: 40px;
+    gap: 24px;
 
     &::before {
       content: "NICE HAIR";
       position: absolute;
-      top: 6px;
+      top: 0;
       left: -6px;
       z-index: 0;
       font-family: "Inter Tight", sans-serif;
-      font-size: clamp(110px, 16vw, 300px);
-      font-weight: 500;
+      font-size: clamp(160px, 17vw, 298px);
+      font-weight: 400;
       line-height: 0.84;
       letter-spacing: -0.055em;
       color: rgba(255, 255, 255, 0.02);
+      white-space: nowrap;
       pointer-events: none;
       user-select: none;
-      white-space: nowrap;
     }
   }
 
@@ -52,11 +88,29 @@
 
   &__top {
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 24px;
+  }
+
+  &__brand {
+    flex: 0 0 auto;
+    max-width: 220px;
+  }
+
+  &__logo {
+    margin: 0;
+
+    img {
+      display: block;
+      width: 100%;
+      max-width: 84px;
+      height: auto;
+    }
   }
 
   &__contact {
-    max-width: 360px;
+    margin-left: auto;
     text-align: right;
   }
 
@@ -67,12 +121,11 @@
   &__text,
   &__feature-text,
   &__social {
-    margin: 0;
     font-family: "Inter Tight", sans-serif;
   }
 
   &__phone {
-    font-size: clamp(24px, 2vw, 34px);
+    font-size: 25px;
     font-weight: 400;
     line-height: 1;
     letter-spacing: -0.04em;
@@ -84,64 +137,68 @@
   }
 
   &__address {
-    margin-top: 10px;
-    font-size: clamp(15px, 1vw, 18px);
-    line-height: 1.1;
+    margin-top: 8px;
+    font-size: 14px;
     font-weight: 400;
-    color: rgba(255, 255, 255, 0.7);
+    line-height: 1.08;
     letter-spacing: -0.03em;
+    color: rgba(255, 255, 255, 0.7);
   }
 
   &__content {
+    align-self: end;
     display: grid;
-    grid-template-columns: minmax(280px, 1fr) minmax(520px, 628px);
+    grid-template-columns: minmax(280px, 1fr) minmax(500px, 602px);
     align-items: end;
-    gap: 64px;
-    padding-top: 40px;
+    gap: 40px;
+    padding-bottom: 10px;
   }
 
   &__aside {
     align-self: end;
-    padding-bottom: 64px;
+    padding-bottom: 34px;
   }
 
   &__secondary-title {
-    font-size: clamp(60px, 5vw, 78px);
-    line-height: 0.95;
+    max-width: 360px;
+    font-size: clamp(56px, 4.6vw, 72px);
     font-weight: 400;
+    line-height: 0.94;
     letter-spacing: -0.055em;
     color: #fff;
   }
 
   &__main {
     justify-self: end;
-    max-width: 628px;
+    width: 100%;
+    max-width: 602px;
   }
 
   &__title {
-    max-width: 11ch;
-    font-size: clamp(60px, 5vw, 82px);
-    line-height: 0.92;
+    max-width: 560px;
+    font-size: clamp(58px, 4.95vw, 80px);
     font-weight: 400;
+    line-height: 0.93;
     letter-spacing: -0.055em;
     color: #fff;
   }
 
   &__text {
-    max-width: 31ch;
+    max-width: 470px;
     margin-top: 20px;
-    font-size: clamp(18px, 1.35vw, 26px);
-    line-height: 1.06;
+    font-size: clamp(18px, 1.45vw, 24px);
     font-weight: 400;
+    line-height: 1.03;
     letter-spacing: -0.035em;
     color: rgba(255, 255, 255, 0.7);
   }
 
   &__actions {
     display: flex;
+    align-items: center;
     flex-wrap: wrap;
-    gap: 24px 34px;
-    margin-top: 38px;
+    gap: 0 34px;
+    margin-top: 34px;
 
     .wp-block-button {
       margin: 0;
@@ -152,34 +209,35 @@
     display: grid;
     grid-template-columns: minmax(0, 1fr) auto;
     align-items: end;
-    gap: 40px;
+    gap: 32px;
   }
 
   &__features {
     display: grid;
     grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: 28px;
+    gap: 26px;
   }
 
   &__feature {
     position: relative;
-    padding-top: 26px;
+    min-width: 0;
+    padding-top: 22px;
 
     &::before {
       content: "";
       position: absolute;
       top: 0;
       left: 0;
-      width: min(100%, 84px);
-      height: 5px;
+      width: 56px;
+      height: 6px;
       background: #fff;
     }
   }
 
   &__feature-text {
-    font-size: 16px;
-    line-height: 1.02;
+    font-size: 13px;
     font-weight: 400;
+    line-height: 1.04;
     letter-spacing: -0.03em;
     color: rgba(255, 255, 255, 0.6);
   }
@@ -188,13 +246,14 @@
     display: flex;
     align-items: center;
     flex-wrap: wrap;
-    gap: 18px 44px;
+    gap: 12px 40px;
+    padding-bottom: 3px;
   }
 
   &__social {
-    font-size: 16px;
-    line-height: 1;
+    font-size: 13px;
     font-weight: 400;
+    line-height: 1;
     letter-spacing: -0.03em;
     color: rgba(255, 255, 255, 0.6);
 
@@ -222,67 +281,63 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    min-height: 64px;
-    padding: 16px 34px;
-    padding-right: 44px;
-    border: 0;
-    border-radius: 999px;
-    background: #ad9482;
-    color: #fff;
+    min-width: 136px;
+    min-height: 56px;
+    padding: 0 25px;
+    padding-right: 34px;
+    border: 0 !important;
+    border-radius: 999px !important;
+    background: #ad9482 !important;
+    color: #fff !important;
     font-family: "Inter Tight", sans-serif;
-    font-size: 17px;
+    font-size: 16px;
     font-weight: 400;
     line-height: 1;
     letter-spacing: -0.03em;
     text-decoration: none;
     text-transform: uppercase;
     white-space: nowrap;
-    box-shadow: none;
+    box-shadow: none !important;
     transition:
+      padding-right 0.35s ease,
       background-color 0.35s ease,
-      color 0.35s ease,
-      padding-right 0.35s ease;
+      color 0.35s ease;
 
     &::before {
       content: "";
       position: absolute;
       top: 50%;
-      right: -54px;
-      width: 64px;
-      height: 64px;
-      border: 1px solid rgba(255, 255, 255, 0.92);
+      right: -28px;
+      width: 56px;
+      height: 56px;
+      border: 1px solid rgba(255, 255, 255, 0.95);
       border-radius: 50%;
       background: transparent;
       transform: translateY(-50%);
       transition:
         right 0.35s ease,
-        border-color 0.35s ease,
         background-color 0.35s ease,
-        opacity 0.35s ease;
+        border-color 0.35s ease;
     }
 
     &::after {
       content: "";
       position: absolute;
       top: 50%;
-      right: -32px;
-      width: 20px;
-      height: 20px;
+      right: -10px;
+      width: 18px;
+      height: 18px;
       background-repeat: no-repeat;
       background-position: center;
-      background-size: 20px 20px;
+      background-size: 18px 18px;
       transform: translateY(-50%);
-      transition:
-        right 0.35s ease,
-        transform 0.35s ease;
+      transition: right 0.35s ease;
       background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cline x1='0.00257927' y1='9.67188' x2='19.2119' y2='9.6209' stroke='white'/%3E%3Cline x1='19.5246' y1='9.73111' x2='10.9169' y2='2.88228' stroke='white'/%3E%3Cline x1='12.597' y1='17.6379' x2='19.4458' y2='9.03014' stroke='white'/%3E%3C/svg%3E");
     }
 
     &:hover,
     &:focus-visible {
-      background: #ad9482;
-      color: #fff;
-      padding-right: 92px;
+      padding-right: 70px;
       outline: none;
     }
 
@@ -295,7 +350,7 @@
 
     &:hover::after,
     &:focus-visible::after {
-      right: 22px;
+      right: 19px;
     }
   }
 }
@@ -303,24 +358,38 @@
 @media (max-width: 1279px) {
   .nh-home-hero {
     &__shell {
-      width: min(100% - 48px, 1200px);
-      padding: 34px 0 24px;
+      width: min(calc(100% - 48px), 1232px);
+      padding: 28px 0 20px;
 
       &::before {
-        top: 0;
-        left: -2px;
-        font-size: clamp(100px, 17vw, 220px);
+        top: 2px;
+        left: 0;
+        font-size: clamp(126px, 16vw, 220px);
       }
     }
 
-    &__contact {
-      max-width: none;
+    &__brand {
+      max-width: 180px;
+    }
+
+    &__logo {
+      img {
+        max-width: 72px;
+      }
+    }
+
+    &__phone {
+      font-size: 22px;
+    }
+
+    &__address {
+      font-size: 13px;
     }
 
     &__content {
       grid-template-columns: 1fr;
       gap: 0;
-      padding-top: 32px;
+      padding-bottom: 0;
     }
 
     &__aside {
@@ -329,37 +398,66 @@
 
     &__main {
       justify-self: start;
-      max-width: 740px;
+      max-width: 600px;
+      padding-top: 210px;
     }
 
     &__title {
-      max-width: 12ch;
-      font-size: clamp(54px, 6.3vw, 78px);
+      max-width: 540px;
+      font-size: clamp(56px, 7vw, 74px);
+      line-height: 0.94;
     }
 
     &__text {
-      max-width: 31ch;
-      margin-top: 14px;
-      font-size: clamp(17px, 2vw, 24px);
-      line-height: 1.04;
+      max-width: 465px;
+      margin-top: 16px;
+      font-size: clamp(18px, 2vw, 23px);
     }
 
     &__actions {
-      gap: 22px 30px;
-      margin-top: 34px;
+      margin-top: 28px;
+      gap: 0 30px;
     }
 
     &__bottom {
-      gap: 28px;
+      gap: 24px;
     }
 
     &__features {
-      gap: 20px;
+      gap: 18px;
     }
 
     &__feature-text,
     &__social {
+      font-size: 12px;
+    }
+  }
+
+  .nh-cta-link {
+    .wp-block-button__link {
+      min-width: 132px;
+      min-height: 54px;
       font-size: 15px;
+
+      &::before {
+        width: 54px;
+        height: 54px;
+        right: -27px;
+      }
+
+      &::after {
+        right: -10px;
+      }
+
+      &:hover,
+      &:focus-visible {
+        padding-right: 66px;
+      }
+
+      &:hover::after,
+      &:focus-visible::after {
+        right: 18px;
+      }
     }
   }
 }
@@ -367,49 +465,61 @@
 @media (max-width: 767px) {
   .nh-home-hero {
     &__shell {
-      width: min(100% - 32px, 100%);
+      width: min(calc(100% - 32px), 100%);
       padding: 26px 0 18px;
-      gap: 28px;
+      gap: 18px;
 
       &::before {
-        top: -2px;
+        top: 0;
         left: 0;
-        font-size: 84px;
-        letter-spacing: -0.05em;
+        font-size: 96px;
+        line-height: 0.9;
       }
     }
 
     &__top {
-      justify-content: center;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 16px;
+    }
+
+    &__brand {
+      max-width: 120px;
+    }
+
+    &__logo {
+      img {
+        max-width: 56px;
+      }
     }
 
     &__contact {
-      text-align: center;
+      margin-left: 0;
+      text-align: right;
     }
 
     &__phone {
-      font-size: 21px;
-      letter-spacing: -0.04em;
+      font-size: 18px;
     }
 
     &__address {
-      margin-top: 8px;
-      font-size: 14px;
-      line-height: 1.08;
+      margin-top: 6px;
+      font-size: 13px;
+      line-height: 1.1;
     }
 
     &__content {
-      padding-top: 0;
-      align-items: center;
+      align-self: center;
     }
 
     &__main {
       max-width: 100%;
+      padding-top: 0;
     }
 
     &__title {
-      max-width: 10.5ch;
-      font-size: clamp(36px, 10.8vw, 52px);
+      max-width: 9.5ch;
+      font-size: clamp(34px, 10.5vw, 52px);
       line-height: 0.95;
     }
 
@@ -429,7 +539,7 @@
 
     &__bottom {
       grid-template-columns: 1fr;
-      gap: 14px;
+      gap: 12px;
     }
 
     &__features {
@@ -438,7 +548,8 @@
 
     &__socials {
       justify-content: flex-start;
-      gap: 14px 26px;
+      gap: 12px 24px;
+      padding-bottom: 0;
     }
 
     &__social {
@@ -448,19 +559,20 @@
 
   .nh-cta-link {
     .wp-block-button__link {
-      min-height: 56px;
-      padding: 14px 28px;
-      padding-right: 38px;
+      min-width: 122px;
+      min-height: 54px;
+      padding: 0 24px;
+      padding-right: 34px;
       font-size: 15px;
 
       &::before {
-        right: -48px;
-        width: 56px;
-        height: 56px;
+        right: -27px;
+        width: 54px;
+        height: 54px;
       }
 
       &::after {
-        right: -28px;
+        right: -10px;
         width: 18px;
         height: 18px;
         background-size: 18px 18px;
@@ -468,12 +580,12 @@
 
       &:hover,
       &:focus-visible {
-        padding-right: 76px;
+        padding-right: 66px;
       }
 
       &:hover::after,
       &:focus-visible::after {
-        right: 19px;
+        right: 18px;
       }
     }
   }
