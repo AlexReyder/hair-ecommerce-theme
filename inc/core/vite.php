@@ -4,13 +4,7 @@ declare(strict_types=1);
 
 function nice_hair_vite_dev_server_url(): string
 {
-	$origin = getenv('VITE_DEV_ORIGIN');
-
-	if (is_string($origin) && $origin !== '') {
-		return rtrim($origin, '/');
-	}
-
-	return 'http://localhost:5173';
+	return 'http://localhost:5174';
 }
 
 function nice_hair_vite_manifest_path(): string
@@ -114,7 +108,7 @@ function nice_hair_enqueue_vite_dev_entry(string $handle, string $entry): void
 		$base . '/' . ltrim($entry, '/'),
 		[],
 		null,
-		true
+		false
 	);
 
 	wp_script_add_data($handle, 'type', 'module');
