@@ -1,4 +1,9 @@
 @use "abstracts/variables";
 @use "editor/base";
+
+// Frontend section styles reused inside Gutenberg editor
+@use "sections/home/one-brand";
+
+// Editor-only adjustments
 @use "./editor/home-hero";
 @use "./editor/home-one-brand";

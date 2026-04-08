@@ -1,7 +1,7 @@
 .nh-home-one-brand {
   margin: 0 !important;
   padding-top: 200px;
-  background: #111214;
+  background: #1d1d1d;
   color: #fff;
   overflow: hidden;
 
@@ -16,9 +16,6 @@
   .wp-block-buttons,
   .wp-block-button,
   .wp-block-spacer,
-  p,
-  h2,
-  h3,
   figure {
     margin-top: 0;
     margin-bottom: 0;
@@ -101,10 +98,11 @@
   &__title {
     max-width: 640px;
     font-size: clamp(56px, 5vw, 72px);
-    font-weight: 400;
+    font-weight: 500;
     line-height: 0.94;
     letter-spacing: -0.06em;
     color: #ad9482;
+    margin-bottom: 60px;
   }
 
   &__text {
@@ -115,6 +113,7 @@
     line-height: 1.02;
     letter-spacing: -0.035em;
     color: rgba(255, 255, 255, 0.72);
+    margin-bottom: 100px !important;
   }
 
   &__cards {

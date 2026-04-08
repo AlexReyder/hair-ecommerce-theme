@@ -1,10 +1,8 @@
 .editor-styles-wrapper {
   .nh-home-one-brand {
-    margin: 0 !important;
-    padding: 48px 0 0;
-    background: #111214;
-    color: #fff;
-    border: 1px dashed rgba(255, 255, 255, 0.18);
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+    max-width: none !important;
 
     .wp-block-group,
     .wp-block-image,
@@ -19,6 +17,13 @@
       margin-bottom: 0;
     }
 
+    .block-editor-inner-blocks,
+    .block-editor-block-list__layout,
+    .wp-block-group__inner-container {
+      width: 100%;
+      max-width: none;
+    }
+
     .is-layout-constrained
       > :where(:not(.alignleft):not(.alignright):not(.alignfull)) {
       max-width: none !important;
@@ -26,103 +31,7 @@
       margin-right: 0 !important;
     }
 
-    &__shell {
-      width: min(calc(100% - 32px), 920px);
-      margin: 0 auto;
-    }
-
-    &__intro {
-      position: relative;
-
-      &::after {
-        content: "[ + ]";
-        position: absolute;
-        top: 42px;
-        right: 0;
-        font-family: "Inter Tight", sans-serif;
-        font-size: 15px;
-        font-weight: 400;
-        line-height: 1;
-        letter-spacing: -0.03em;
-        color: rgba(255, 255, 255, 0.88);
-        pointer-events: none;
-        user-select: none;
-      }
-    }
-
-    &__eyebrow,
-    &__title,
-    &__text,
-    &__card-title,
-    &__card-text {
-      font-family: "Inter Tight", sans-serif;
-    }
-
-    &__eyebrow {
-      font-size: 15px;
-      line-height: 1;
-      letter-spacing: -0.03em;
-      color: #fff !important;
-    }
-
-    &__divider {
-      position: relative;
-      height: 6px !important;
-      margin-top: 16px;
-      margin-bottom: 28px;
-
-      &::before {
-        content: "";
-        position: absolute;
-        inset: 0 auto 0 0;
-        width: 68px;
-        height: 6px;
-        background: #fff;
-      }
-
-      &::after {
-        content: "";
-        position: absolute;
-        top: 2px;
-        left: 0;
-        right: 0;
-        height: 1px;
-        background: rgba(255, 255, 255, 0.14);
-      }
-    }
-
-    &__title {
-      max-width: 640px;
-      font-size: clamp(38px, 6vw, 58px);
-      font-weight: 400;
-      line-height: 0.96;
-      letter-spacing: -0.055em;
-      color: #ad9482 !important;
-    }
-
-    &__text {
-      max-width: 620px;
-      margin-top: 36px;
-      font-size: 18px;
-      font-weight: 400;
-      line-height: 1.08;
-      letter-spacing: -0.03em;
-      color: rgba(255, 255, 255, 0.78) !important;
-    }
-
-    &__cards {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 36px;
-      margin-top: 40px;
-    }
-
-    &__image {
-      margin: 0;
-      aspect-ratio: 629 / 442;
-      overflow: hidden;
-      border-radius: 24px;
-
+    .wp-block-image {
       img {
         display: block;
         width: 100%;
@@ -131,77 +40,30 @@
       }
     }
 
-    &__card-body {
-      display: grid;
-      grid-template-columns: minmax(0, 1fr) auto;
-      grid-template-areas:
-        "title actions"
-        "text actions";
-      align-items: start;
-      column-gap: 20px;
-      row-gap: 14px;
-      margin-top: 20px;
+    .wp-block-buttons {
+      gap: 0 !important;
     }
 
-    &__card-title {
-      grid-area: title;
-      font-size: clamp(28px, 4vw, 40px);
-      font-weight: 400;
-      line-height: 0.97;
-      letter-spacing: -0.05em;
-      color: #fff !important;
+    .wp-block-button {
+      margin: 0 !important;
     }
 
-    &__card-text {
-      grid-area: text;
-      max-width: 420px;
-      font-size: 16px;
-      font-weight: 400;
-      line-height: 1.08;
-      letter-spacing: -0.03em;
-      color: rgba(255, 255, 255, 0.76) !important;
+    .wp-block-button__link {
+      text-decoration: none;
+      box-shadow: none !important;
     }
 
-    &__card-actions {
-      grid-area: actions;
-      justify-content: flex-end;
+    .rich-text {
+      max-width: 100%;
+    }
 
-      .wp-block-button {
-        margin: 0;
-      }
+    [data-rich-text-placeholder] {
+      min-width: 1ch;
     }
   }
-}
 
-@media (max-width: 781px) {
-  .editor-styles-wrapper {
-    .nh-home-one-brand {
-      &__shell {
-        width: min(calc(100% - 24px), 100%);
-      }
-
-      &__intro {
-        &::after {
-          display: none;
-        }
-      }
-
-      &__text {
-        margin-top: 24px;
-        font-size: 16px;
-      }
-
-      &__card-body {
-        grid-template-columns: 1fr;
-        grid-template-areas:
-          "title"
-          "text"
-          "actions";
-      }
-
-      &__card-actions {
-        justify-content: flex-start;
-      }
-    }
+  .wp-block[data-align="full"] > .nh-home-one-brand,
+  .nh-home-one-brand.alignfull {
+    max-width: none !important;
   }
 }
