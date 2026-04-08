@@ -1,0 +1,11 @@
+@use '../abstracts/variables' as *;
+
+body {
+  margin: 0;
+  background: $nh-color-bg;
+  color: $nh-color-text;
+}
+
+a {
+  text-decoration: none;
+}
