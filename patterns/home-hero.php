@@ -7,7 +7,6 @@
  */
 
 $hero_image_url = esc_url( get_template_directory_uri() . '/assets/images/home-hero.jpg' );
-$logo_url       = esc_url( get_template_directory_uri() . '/assets/images/logo.svg' );
 ?>
 
 <!-- wp:cover {"url":"<?php echo $hero_image_url; ?>","dimRatio":40,"customOverlayColor":"#1c1c1c","minHeight":100,"minHeightUnit":"vh","isDark":false,"align":"full","focalPoint":{"x":0.5,"y":0.5},"className":"nh-home-hero","lock":{"move":true,"remove":true}} -->
@@ -21,17 +20,6 @@ $logo_url       = esc_url( get_template_directory_uri() . '/assets/images/logo.s
 
 			<!-- wp:group {"className":"nh-home-hero__top","lock":{"move":true,"remove":true}} -->
 			<div class="wp-block-group nh-home-hero__top">
-
-				<!-- wp:group {"className":"nh-home-hero__brand","lock":{"move":true,"remove":true}} -->
-				<div class="wp-block-group nh-home-hero__brand">
-					<!-- wp:image {"sizeSlug":"full","linkDestination":"none","className":"nh-home-hero__logo"} -->
-					<figure class="wp-block-image size-full nh-home-hero__logo">
-						<img src="<?php echo $logo_url; ?>" alt="Nice Hair logo" />
-					</figure>
-					<!-- /wp:image -->
-				</div>
-				<!-- /wp:group -->
-
 				<!-- wp:group {"className":"nh-home-hero__contact","lock":{"move":true,"remove":true}} -->
 				<div class="wp-block-group nh-home-hero__contact">
 					<!-- wp:paragraph {"className":"nh-home-hero__phone"} -->
@@ -43,7 +31,6 @@ $logo_url       = esc_url( get_template_directory_uri() . '/assets/images/logo.s
 					<!-- /wp:paragraph -->
 				</div>
 				<!-- /wp:group -->
-
 			</div>
 			<!-- /wp:group -->
 
