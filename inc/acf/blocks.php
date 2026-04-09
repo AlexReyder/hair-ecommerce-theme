@@ -27,7 +27,7 @@ function nice_hair_register_acf_blocks(): void
         'icon'            => 'editor-help',
         'keywords'        => ['faq', 'questions', 'accordion'],
         'render_template' => 'template-parts/blocks/faq/faq.php',
-        'mode'            => 'preview',
+        'mode'            => 'auto',
         'supports'        => [
             'align'  => false,
             'anchor' => true,
