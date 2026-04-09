@@ -10,6 +10,8 @@ $nice_hair_files = [
     '/inc/editor/pattern-registration.php',
     '/inc/editor/editor-assets.php',
     '/inc/editor/allowed-blocks.php',
+    '/inc/acf/blocks.php',
+    '/inc/acf/fields.php',
     '/inc/theme/template-functions.php',
 ];
 

@@ -1,8 +1,0 @@
-@use "../../abstracts/mixins" as *;
-
-.nh-home-faq {
-  @include nh-container;
-  padding: 64px 0;
-  display: grid;
-  gap: 16px;
-}

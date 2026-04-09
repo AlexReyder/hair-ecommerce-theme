@@ -34,6 +34,7 @@ function nice_hair_allowed_blocks(array|bool $allowed_block_types, WP_Block_Edit
         'core/quote',
         'core/cover',
         'core/media-text',
+        'acf/nh-faq',
     ];
 }
 add_filter('allowed_block_types_all', 'nice_hair_allowed_blocks', 10, 2);
