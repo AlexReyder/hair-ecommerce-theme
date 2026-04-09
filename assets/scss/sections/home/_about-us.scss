@@ -13,17 +13,6 @@
     box-sizing: border-box;
   }
 
-  .wp-block-group,
-  .wp-block-image,
-  .wp-block-spacer,
-  p,
-  h2,
-  h3,
-  figure {
-    margin-top: 0;
-    margin-bottom: 0;
-  }
-
   .is-layout-constrained
     > :where(:not(.alignleft):not(.alignright):not(.alignfull)) {
     max-width: none !important;

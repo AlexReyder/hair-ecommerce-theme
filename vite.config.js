@@ -2,7 +2,8 @@ import { defineConfig } from "vite";
 import path from "node:path";
 
 const themeRoot = __dirname;
-const devHost = process.env.VITE_DEV_HOST || "localhost";
+
+const devHost = process.env.VITE_DEV_HOST || "127.0.0.1";
 const devPort = Number(process.env.VITE_DEV_PORT || 5173);
 const devOrigin = process.env.VITE_DEV_ORIGIN || `http://${devHost}:${devPort}`;
 
@@ -12,7 +13,7 @@ export default defineConfig({
   publicDir: false,
 
   server: {
-    host: true,
+    host: devHost,
     port: devPort,
     strictPort: true,
     origin: devOrigin,
