@@ -71,7 +71,7 @@
         inset: 0 auto 0 0;
         width: 68px;
         height: 6px;
-        background: $nh-color-accent;
+        background: #fff;
       }
 
       &::after {
@@ -97,7 +97,7 @@
 
     &__subtitle {
       max-width: 420px;
-      margin-top: 16px;
+      margin-top: 40px;
       font-family: "Inter Tight", sans-serif;
       font-size: 14px;
       font-weight: 400;
@@ -110,7 +110,7 @@
       grid-template-columns: repeat(4, minmax(0, 1fr));
       grid-template-rows: auto auto auto;
       gap: 10px;
-      margin-top: 40px;
+      margin-top: 60px;
     }
 
     &__item {
@@ -145,8 +145,7 @@
       grid-row: 3;
       display: flex;
       flex-direction: column;
-      justify-content: flex-end;
-      padding-bottom: 6px;
+      justify-content: center;
     }
 
     &__instagram-title {
@@ -161,11 +160,11 @@
     &__instagram-link {
       margin-top: 8px;
       font-family: "Inter Tight", sans-serif;
-      font-size: 13px;
+      font-size: 18px;
       font-weight: 400;
 
       a {
-        color: rgba(255, 255, 255, 0.6) !important;
+        color: #fff !important;
         text-decoration: none;
       }
     }
