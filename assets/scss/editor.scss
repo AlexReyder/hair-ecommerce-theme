@@ -1,8 +1,8 @@
 @use "abstracts/variables";
 @use "editor/base";
+@use "components/text-link";
 @use "sections/home/one-brand";
+@use "sections/home/about-us";
 @use "./editor/home-hero";
 @use "./editor/home-one-brand";
-@use "components/text-link";
-@use "sections/home/about-us";
 @use "./editor/home-about-us";

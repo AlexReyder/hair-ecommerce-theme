@@ -6,63 +6,66 @@
  * Inserter: yes
  */
 
-$about_bg_pattern_url = esc_url(get_template_directory_uri() . '/assets/images/bg-about-pattern.svg');
-$about_image_1_url    = esc_url(get_template_directory_uri() . '/assets/images/about-1.jpg');
-$about_image_2_url    = esc_url(get_template_directory_uri() . '/assets/images/about-2.jpg');
-$about_image_3_url    = esc_url(get_template_directory_uri() . '/assets/images/about-3.jpg');
+$about_image_1_url = esc_url( get_template_directory_uri() . '/assets/images/about-1.jpg' );
+$about_image_2_url = esc_url( get_template_directory_uri() . '/assets/images/about-2.jpg' );
+$about_image_3_url = esc_url( get_template_directory_uri() . '/assets/images/about-3.jpg' );
 ?>
 
-<!-- wp:group {"align":"full","className":"nh-home-about-us","style":{"spacing":{"padding":{"top":"0","bottom":"0"}}},"layout":{"type":"default"}} -->
-<div class="wp-block-group alignfull nh-home-about-us" style="--nh-about-wave:url('<?php echo $about_bg_pattern_url; ?>')">
-	<!-- wp:group {"className":"nh-home-about-us__decor nh-home-about-us__decor--top-right","layout":{"type":"default"},"lock":{"move":true,"remove":true}} -->
+<!-- wp:group {"align":"full","className":"nh-home-about-us","layout":{"type":"default"}} -->
+<div class="wp-block-group alignfull nh-home-about-us">
+	<!-- wp:group {"className":"nh-home-about-us__decor nh-home-about-us__decor--top-right","layout":{"type":"default"}} -->
 	<div class="wp-block-group nh-home-about-us__decor nh-home-about-us__decor--top-right"></div>
 	<!-- /wp:group -->
 
-	<!-- wp:group {"className":"nh-home-about-us__decor nh-home-about-us__decor--center","layout":{"type":"default"},"lock":{"move":true,"remove":true}} -->
+	<!-- wp:group {"className":"nh-home-about-us__decor nh-home-about-us__decor--center","layout":{"type":"default"}} -->
 	<div class="wp-block-group nh-home-about-us__decor nh-home-about-us__decor--center"></div>
 	<!-- /wp:group -->
 
-	<!-- wp:group {"className":"nh-home-about-us__decor nh-home-about-us__decor--bottom-left","layout":{"type":"default"},"lock":{"move":true,"remove":true}} -->
+	<!-- wp:group {"className":"nh-home-about-us__decor nh-home-about-us__decor--bottom-left","layout":{"type":"default"}} -->
 	<div class="wp-block-group nh-home-about-us__decor nh-home-about-us__decor--bottom-left"></div>
 	<!-- /wp:group -->
 
-	<!-- wp:group {"className":"nh-home-about-us__shell","layout":{"type":"default"},"lock":{"move":true,"remove":true}} -->
+	<!-- wp:group {"className":"nh-home-about-us__shell","layout":{"type":"default"}} -->
 	<div class="wp-block-group nh-home-about-us__shell">
-		<!-- wp:group {"className":"nh-home-about-us__intro","layout":{"type":"default"},"lock":{"move":true,"remove":true}} -->
+		<!-- wp:group {"className":"nh-home-about-us__intro","layout":{"type":"default"}} -->
 		<div class="wp-block-group nh-home-about-us__intro">
 			<!-- wp:paragraph {"className":"nh-home-about-us__eyebrow"} -->
 			<p class="nh-home-about-us__eyebrow">[ ABOUT US ]</p>
 			<!-- /wp:paragraph -->
 
-			<!-- wp:spacer {"height":"6px","className":"nh-home-about-us__divider","lock":{"move":true,"remove":true}} -->
+			<!-- wp:spacer {"height":"6px","className":"nh-home-about-us__divider"} -->
 			<div style="height:6px" aria-hidden="true" class="wp-block-spacer nh-home-about-us__divider"></div>
 			<!-- /wp:spacer -->
 
 			<!-- wp:heading {"level":2,"className":"nh-home-about-us__title"} -->
 			<h2 class="nh-home-about-us__title">What We Call Standard, Others Call Exceptional</h2>
 			<!-- /wp:heading -->
-
-			<!-- wp:paragraph {"className":"nh-home-about-us__lead"} -->
-			<p class="nh-home-about-us__lead">Our company brings together a professional hair extension studio and a full-cycle production of premium Slavic hair.</p>
-			<!-- /wp:paragraph -->
 		</div>
 		<!-- /wp:group -->
 
-		<!-- wp:group {"className":"nh-home-about-us__main","layout":{"type":"default"},"lock":{"move":true,"remove":true}} -->
+		<!-- wp:group {"className":"nh-home-about-us__main","layout":{"type":"default"}} -->
 		<div class="wp-block-group nh-home-about-us__main">
-			<!-- wp:group {"className":"nh-home-about-us__body","layout":{"type":"default"},"lock":{"move":true,"remove":true}} -->
-			<div class="wp-block-group nh-home-about-us__body">
-				<!-- wp:paragraph {"className":"nh-home-about-us__body-text nh-home-about-us__body-text--primary"} -->
-				<p class="nh-home-about-us__body-text nh-home-about-us__body-text--primary">Here, you’ll find carefully selected raw hair, handcrafted products, and the techniques we refine every day. Our approach is built on transparency, consistency, and deep understanding of what both clients and extension artists truly need.</p>
+			<!-- wp:group {"className":"nh-home-about-us__content","layout":{"type":"default"}} -->
+			<div class="wp-block-group nh-home-about-us__content">
+				<!-- wp:paragraph {"className":"nh-home-about-us__lead"} -->
+				<p class="nh-home-about-us__lead">Our company brings together a professional hair extension studio and a full-cycle production of premium Slavic hair.</p>
 				<!-- /wp:paragraph -->
 
-				<!-- wp:paragraph {"className":"nh-home-about-us__body-text"} -->
-				<p class="nh-home-about-us__body-text">The space and the process are designed for comfort, trust, and precision — from choosing the right materials to creating a flawless result.</p>
-				<!-- /wp:paragraph -->
+				<!-- wp:group {"className":"nh-home-about-us__body","layout":{"type":"default"}} -->
+				<div class="wp-block-group nh-home-about-us__body">
+					<!-- wp:paragraph {"className":"nh-home-about-us__body-text nh-home-about-us__body-text--primary"} -->
+					<p class="nh-home-about-us__body-text nh-home-about-us__body-text--primary">Here, you’ll find carefully selected raw hair, handcrafted products, and the techniques we refine every day. Our approach is built on transparency, consistency, and deep understanding of what both clients and extension artists truly need.</p>
+					<!-- /wp:paragraph -->
+
+					<!-- wp:paragraph {"className":"nh-home-about-us__body-text"} -->
+					<p class="nh-home-about-us__body-text">The space and the process are designed for comfort, trust, and precision — from choosing the right materials to creating a flawless result.</p>
+					<!-- /wp:paragraph -->
+				</div>
+				<!-- /wp:group -->
 			</div>
 			<!-- /wp:group -->
 
-			<!-- wp:group {"className":"nh-home-about-us__stats","layout":{"type":"default"},"lock":{"move":true,"remove":true}} -->
+			<!-- wp:group {"className":"nh-home-about-us__stats","layout":{"type":"default"}} -->
 			<div class="wp-block-group nh-home-about-us__stats">
 				<!-- wp:group {"className":"nh-home-about-us__stat","layout":{"type":"default"}} -->
 				<div class="wp-block-group nh-home-about-us__stat">
@@ -151,7 +154,7 @@ $about_image_3_url    = esc_url(get_template_directory_uri() . '/assets/images/a
 					<!-- /wp:paragraph -->
 
 					<!-- wp:heading {"level":3,"className":"nh-home-about-us__stat-title"} -->
-					<h3 class="nh-home-about-us__stat-title">employees</h3>
+					<h3 class="nh-home-about-us__stat-title">Employees</h3>
 					<!-- /wp:heading -->
 
 					<!-- wp:paragraph {"className":"nh-home-about-us__stat-text"} -->
@@ -164,31 +167,37 @@ $about_image_3_url    = esc_url(get_template_directory_uri() . '/assets/images/a
 		</div>
 		<!-- /wp:group -->
 
-		<!-- wp:group {"className":"nh-home-about-us__bottom","layout":{"type":"default"},"lock":{"move":true,"remove":true}} -->
+		<!-- wp:group {"className":"nh-home-about-us__bottom","layout":{"type":"default"}} -->
 		<div class="wp-block-group nh-home-about-us__bottom">
-			<!-- wp:group {"className":"nh-home-about-us__gallery","layout":{"type":"default"},"lock":{"move":true,"remove":true}} -->
+			<!-- wp:group {"className":"nh-home-about-us__gallery","layout":{"type":"default"}} -->
 			<div class="wp-block-group nh-home-about-us__gallery">
 				<!-- wp:image {"sizeSlug":"full","linkDestination":"none","className":"nh-home-about-us__gallery-image"} -->
-				<figure class="wp-block-image size-full nh-home-about-us__gallery-image"><img src="<?php echo $about_image_1_url; ?>" alt="Hair product detail one" /></figure>
+				<figure class="wp-block-image size-full nh-home-about-us__gallery-image">
+					<img src="<?php echo $about_image_1_url; ?>" alt="Hair product detail one" />
+				</figure>
 				<!-- /wp:image -->
 
 				<!-- wp:image {"sizeSlug":"full","linkDestination":"none","className":"nh-home-about-us__gallery-image"} -->
-				<figure class="wp-block-image size-full nh-home-about-us__gallery-image"><img src="<?php echo $about_image_2_url; ?>" alt="Hair product detail two" /></figure>
+				<figure class="wp-block-image size-full nh-home-about-us__gallery-image">
+					<img src="<?php echo $about_image_2_url; ?>" alt="Hair product detail two" />
+				</figure>
 				<!-- /wp:image -->
 
 				<!-- wp:image {"sizeSlug":"full","linkDestination":"none","className":"nh-home-about-us__gallery-image"} -->
-				<figure class="wp-block-image size-full nh-home-about-us__gallery-image"><img src="<?php echo $about_image_3_url; ?>" alt="Hair product detail three" /></figure>
+				<figure class="wp-block-image size-full nh-home-about-us__gallery-image">
+					<img src="<?php echo $about_image_3_url; ?>" alt="Hair product detail three" />
+				</figure>
 				<!-- /wp:image -->
 			</div>
 			<!-- /wp:group -->
 
-			<!-- wp:group {"className":"nh-home-about-us__aside","layout":{"type":"default"},"lock":{"move":true,"remove":true}} -->
+			<!-- wp:group {"className":"nh-home-about-us__aside","layout":{"type":"default"}} -->
 			<div class="wp-block-group nh-home-about-us__aside">
 				<!-- wp:paragraph {"className":"nh-home-about-us__aside-eyebrow"} -->
 				<p class="nh-home-about-us__aside-eyebrow">[ ABOUT US ]</p>
 				<!-- /wp:paragraph -->
 
-				<!-- wp:spacer {"height":"6px","className":"nh-home-about-us__aside-divider","lock":{"move":true,"remove":true}} -->
+				<!-- wp:spacer {"height":"6px","className":"nh-home-about-us__aside-divider"} -->
 				<div style="height:6px" aria-hidden="true" class="wp-block-spacer nh-home-about-us__aside-divider"></div>
 				<!-- /wp:spacer -->
 

@@ -5,11 +5,11 @@
 @use "layout/site-header";
 @use "layout/site-footer";
 @use "components/button";
+@use "components/text-link";
 @use "components/faq" as comp-faq;
 @use "sections/home/hero";
 @use "sections/home/one-brand";
+@use "sections/home/about-us";
 @use "sections/home/faq" as home-faq;
 @use "sections/home/gallery";
 @use "sections/home/cta";
-@use "components/text-link";
-@use "sections/home/about-us";
