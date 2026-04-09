@@ -3,25 +3,16 @@ import path from "node:path";
 
 const themeRoot = __dirname;
 
-const devHost = process.env.VITE_DEV_HOST || "127.0.0.1";
-const devPort = Number(process.env.VITE_DEV_PORT || 5173);
-const devOrigin = process.env.VITE_DEV_ORIGIN || `http://${devHost}:${devPort}`;
-
 export default defineConfig({
   root: themeRoot,
   base: "",
   publicDir: false,
 
   server: {
-    host: devHost,
-    port: devPort,
+    host: "127.0.0.1",
+    port: 5173,
     strictPort: true,
-    origin: devOrigin,
-    hmr: {
-      host: devHost,
-      port: devPort,
-      protocol: devOrigin.startsWith("https") ? "wss" : "ws",
-    },
+    origin: "http://127.0.0.1:5173",
   },
 
   resolve: {
@@ -40,7 +31,7 @@ export default defineConfig({
     rollupOptions: {
       input: {
         app: path.resolve(themeRoot, "assets/js/app.js"),
-        editor: path.resolve(themeRoot, "assets/js/editor.js"),
+        editor: path.resolve(themeRoot, "assets/scss/editor.scss"),
       },
       output: {
         entryFileNames: "js/[name]-[hash].js",

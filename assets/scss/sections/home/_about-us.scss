@@ -20,6 +20,22 @@
     margin-right: 0 !important;
   }
 
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    width: 100%;
+    aspect-ratio: 1582 / 1270;
+    pointer-events: none;
+    user-select: none;
+    background-image: url("../../../images/bg-about-pattern.svg");
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: 100% 100%;
+  }
+
   &__shell {
     position: relative;
     z-index: 2;
@@ -28,41 +44,7 @@
   }
 
   &__decor {
-    position: absolute;
-    z-index: 1;
-    pointer-events: none;
-    user-select: none;
-    background-image: url("../../../images/bg-about-pattern.svg");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: contain;
-    opacity: 0.24;
-
-    &--top-right {
-      top: -140px;
-      right: -90px;
-      width: 560px;
-      height: 560px;
-      transform: rotate(18deg);
-    }
-
-    &--center {
-      top: 330px;
-      left: 50%;
-      width: min(1120px, 72vw);
-      height: 520px;
-      transform: translateX(-35%);
-      opacity: 0.22;
-    }
-
-    &--bottom-left {
-      left: -180px;
-      bottom: 260px;
-      width: 520px;
-      height: 520px;
-      transform: rotate(-18deg);
-      opacity: 0.18;
-    }
+    display: none;
   }
 
   &__eyebrow,
@@ -267,32 +249,21 @@
 
 @media (max-width: 1279px) {
   .nh-home-about-us {
+    &::before {
+      top: 20px;
+      left: 50%;
+      width: 128%;
+      transform: translateX(-49%);
+      background-position: top center;
+      background-size: 100% 100%;
+    }
+
     &__shell {
       width: min(calc(100% - 40px), 728px);
     }
 
     &__decor {
-      &--top-right {
-        top: -120px;
-        right: -180px;
-        width: 440px;
-        height: 440px;
-      }
-
-      &--center {
-        top: 380px;
-        left: 55%;
-        width: 760px;
-        height: 360px;
-        transform: translateX(-42%);
-      }
-
-      &--bottom-left {
-        left: -220px;
-        bottom: 520px;
-        width: 420px;
-        height: 420px;
-      }
+      display: none;
     }
 
     &__divider,
@@ -398,32 +369,21 @@
 
 @media (max-width: 767px) {
   .nh-home-about-us {
+    &::before {
+      top: 360px;
+      left: 50%;
+      width: 190%;
+      transform: translateX(-57%);
+      background-position: top center;
+      background-size: 100% 100%;
+    }
+
     &__shell {
       width: calc(100% - 32px);
     }
 
     &__decor {
-      &--top-right {
-        top: -110px;
-        right: -210px;
-        width: 340px;
-        height: 340px;
-      }
-
-      &--center {
-        top: 500px;
-        left: 52%;
-        width: 560px;
-        height: 280px;
-        transform: translateX(-46%);
-      }
-
-      &--bottom-left {
-        left: -170px;
-        bottom: 520px;
-        width: 300px;
-        height: 300px;
-      }
+      display: none;
     }
 
     &__divider,

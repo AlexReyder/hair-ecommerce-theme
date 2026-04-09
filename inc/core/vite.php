@@ -10,18 +10,7 @@ function nice_hair_vite_dev_server_url(): string
         return rtrim($origin, '/');
     }
 
-    $host = getenv('VITE_DEV_HOST');
-    $port = getenv('VITE_DEV_PORT');
-
-    if (! is_string($host) || $host === '') {
-        $host = '127.0.0.1';
-    }
-
-    if (! is_string($port) || $port === '') {
-        $port = '5173';
-    }
-
-    return sprintf('http://%s:%s', $host, $port);
+    return 'http://127.0.0.1:5173';
 }
 
 function nice_hair_vite_manifest_path(): string
@@ -52,6 +41,17 @@ function nice_hair_vite_manifest(): array
     return $manifest;
 }
 
+function nice_hair_vite_manifest_entry(string $entry): ?array
+{
+    $manifest = nice_hair_vite_manifest();
+
+    if (! isset($manifest[$entry]) || ! is_array($manifest[$entry])) {
+        return null;
+    }
+
+    return $manifest[$entry];
+}
+
 function nice_hair_is_vite_dev_server_running(): bool
 {
     static $available = null;
@@ -63,7 +63,7 @@ function nice_hair_is_vite_dev_server_running(): bool
     $response = wp_remote_get(
         nice_hair_vite_dev_server_url() . '/@vite/client',
         [
-            'timeout'   => 0.5,
+            'timeout'   => 0.35,
             'sslverify' => false,
         ]
     );
@@ -73,16 +73,20 @@ function nice_hair_is_vite_dev_server_running(): bool
     return $available;
 }
 
+function nice_hair_vite_dev_asset_url(string $asset_path): string
+{
+    return trailingslashit(nice_hair_vite_dev_server_url()) . ltrim($asset_path, '/');
+}
+
 function nice_hair_enqueue_vite_entry(string $handle, string $entry, array $deps = []): void
 {
-    $manifest = nice_hair_vite_manifest();
+    $asset = nice_hair_vite_manifest_entry($entry);
 
-    if (! isset($manifest[$entry]['file'])) {
+    if ($asset === null || ! isset($asset['file'])) {
         return;
     }
 
-    $asset = $manifest[$entry];
-    $base  = get_theme_file_uri('/assets/dist/');
+    $base = get_theme_file_uri('/assets/dist/');
 
     if (! empty($asset['css']) && is_array($asset['css'])) {
         foreach ($asset['css'] as $index => $css_file) {
@@ -129,4 +133,47 @@ function nice_hair_enqueue_vite_dev_entry(string $handle, string $entry): void
     );
 
     wp_script_add_data($handle, 'type', 'module');
+}
+
+function nice_hair_enqueue_vite_style_entry(string $handle, string $entry): void
+{
+    $asset = nice_hair_vite_manifest_entry($entry);
+
+    if ($asset === null || ! isset($asset['file'])) {
+        return;
+    }
+
+    $base      = trailingslashit(get_theme_file_uri('/assets/dist/'));
+    $css_files = [];
+
+    if (str_ends_with((string) $asset['file'], '.css')) {
+        $css_files[] = (string) $asset['file'];
+    }
+
+    if (! empty($asset['css']) && is_array($asset['css'])) {
+        foreach ($asset['css'] as $css_file) {
+            $css_files[] = (string) $css_file;
+        }
+    }
+
+    $css_files = array_values(array_unique($css_files));
+
+    foreach ($css_files as $index => $css_file) {
+        wp_enqueue_style(
+            sprintf('%s-%d', $handle, $index),
+            $base . ltrim($css_file, '/'),
+            [],
+            null
+        );
+    }
+}
+
+function nice_hair_enqueue_vite_dev_style(string $handle, string $asset_path): void
+{
+    wp_enqueue_style(
+        $handle,
+        nice_hair_vite_dev_asset_url($asset_path),
+        [],
+        null
+    );
 }
