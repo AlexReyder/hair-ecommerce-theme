@@ -208,7 +208,7 @@ function nice_hair_register_patterns(): void
 				<!-- /wp:heading -->
 
 				<!-- wp:paragraph {"className":"nh-gallery__instagram-link","lock":{"move":true,"remove":true}} -->
-				<p class="nh-gallery__instagram-link"><a href="https://www.instagram.com/nice_hair_dxb/">Instagram   [ @nice_hair_dxb ]</a></p>
+				<p class="nh-gallery__instagram-link">Instagram <a href="https://www.instagram.com/nice_hair_dxb/">[ @nice_hair_dxb ]</a></p>
 				<!-- /wp:paragraph -->
 			</div>
 			<!-- /wp:group -->

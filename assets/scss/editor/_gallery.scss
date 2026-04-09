@@ -8,15 +8,8 @@
     color: #fff;
     border: 1px dashed rgba(255, 255, 255, 0.18);
 
-    .wp-block-group,
-    .wp-block-image,
-    .wp-block-spacer,
-    p,
-    h2,
-    h3,
-    figure {
-      margin-top: 0;
-      margin-bottom: 0;
+    :where(.wp-block-group, .wp-block-image, .wp-block-spacer, p, h2, h3, figure) {
+      margin: 0;
     }
 
     .is-layout-constrained
@@ -160,11 +153,12 @@
     &__instagram-link {
       margin-top: 8px;
       font-family: "Inter Tight", sans-serif;
-      font-size: 18px;
+      font-size: 14px;
       font-weight: 400;
+      color: rgba(255, 255, 255, 0.6) !important;
 
       a {
-        color: rgba(255, 255, 255, 0.6) !important;
+        color: #fff !important;
         text-decoration: none;
       }
     }
