@@ -3,9 +3,10 @@
 @use "components/text-link";
 @use "sections/home/one-brand";
 @use "sections/home/about-us";
+@use "components/faq" as comp-faq;
 @use "./editor/home-hero";
 @use "./editor/home-one-brand";
 @use "./editor/home-about-us";
-@use "./editor/faq";
+@use "./editor/faq" as editor-faq;
 @use "./editor/contact";
 @use "./editor/gallery";
