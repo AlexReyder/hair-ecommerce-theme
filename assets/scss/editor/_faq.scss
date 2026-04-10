@@ -89,10 +89,13 @@
       color: rgba(255, 255, 255, 0.6) !important;
       transition: none;
     }
+  }
 
-    &__item--open &__answer-text {
-      padding-bottom: 18px;
-    }
+  // Note: written as a flat selector (not nested under .nh-faq) so that
+  // SCSS doesn't expand `&` twice and produce a duplicated
+  // `.editor-styles-wrapper` selector that never matches.
+  .nh-faq__item--open .nh-faq__answer-text {
+    padding-bottom: 18px;
   }
 }
 
