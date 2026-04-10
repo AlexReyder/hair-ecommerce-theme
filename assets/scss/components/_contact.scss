@@ -6,21 +6,7 @@
   background: #1d1d1d;
   color: #fff;
   overflow: hidden;
-
-  *,
-  *::before,
-  *::after {
-    box-sizing: border-box;
-  }
-
-  .wp-block-group,
-  .wp-block-image,
-  p,
-  h2,
-  figure {
-    margin-top: 0;
-    margin-bottom: 0;
-  }
+  padding-top: var(--section-spacing);
 
   .is-layout-constrained
     > :where(:not(.alignleft):not(.alignright):not(.alignfull)) {
@@ -30,7 +16,7 @@
   }
 
   &__shell {
-    width: min(calc(100% - 64px), 1372px);
+    width: var(--layout-width);
     margin: 0 auto;
   }
 
@@ -51,17 +37,19 @@
 
   &__title {
     font-family: "Inter Tight", sans-serif;
-    font-size: clamp(28px, 2.5vw, 36px);
+    font-size: clamp(28px, 2.5vw, 32px);
     font-weight: 500;
     line-height: 1.1;
     letter-spacing: -0.04em;
     color: #fff;
+    padding-bottom: 30px;
+    max-width: 300px;
   }
 
   &__description {
     margin-top: 24px;
     font-family: "Inter Tight", sans-serif;
-    font-size: clamp(14px, 1vw, 16px);
+    font-size: var(--subheading-size);
     font-weight: 400;
     line-height: 1.45;
     letter-spacing: -0.02em;
@@ -85,6 +73,7 @@
   .nh-text-link.nh-contact__link {
     a {
       color: #fff;
+      font-weight: 400;
 
       &::after {
         background-image: url("data:image/svg+xml,%3Csvg width='20' height='14' viewBox='0 0 20 14' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 7H18' stroke='%23FFFFFF'/%3E%3Cpath d='M13 1L19 7L13 13' stroke='%23FFFFFF'/%3E%3C/svg%3E");
@@ -94,7 +83,7 @@
 
   &__or {
     font-family: "Inter Tight", sans-serif;
-    font-size: 14px;
+    font-size: clamp(16px, 1.4vw, 18px);
     font-weight: 400;
     line-height: 1;
     letter-spacing: -0.02em;
@@ -197,6 +186,10 @@
       padding: 80px 0 60px;
     }
 
+    &__title {
+      max-width: 100%;
+    }
+
     &__info {
       max-width: 100%;
     }
@@ -236,7 +229,8 @@
 
     &__map-image {
       aspect-ratio: auto;
-      min-height: 300px;
+      // min-height: 300px;
+      height: 100%;
     }
 
     &__map-link {

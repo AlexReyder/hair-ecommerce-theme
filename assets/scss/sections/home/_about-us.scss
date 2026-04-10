@@ -2,16 +2,10 @@
   position: relative;
   isolation: isolate;
   margin: 0 !important;
-  padding-top: 200px;
-  background: #1d1d1d;
+  padding-top: var(--section-spacing);
+  background: var(--bg-color);
   color: #fff;
   overflow: hidden;
-
-  *,
-  *::before,
-  *::after {
-    box-sizing: border-box;
-  }
 
   .is-layout-constrained
     > :where(:not(.alignleft):not(.alignright):not(.alignfull)) {
@@ -39,7 +33,7 @@
   &__shell {
     position: relative;
     z-index: 2;
-    width: min(calc(100% - 56px), 1720px);
+    width: var(--layout-width);
     margin: 0 auto;
   }
 
@@ -48,24 +42,10 @@
   }
 
   &__eyebrow,
-  &__aside-eyebrow,
-  &__title,
-  &__lead,
-  &__body-text,
-  &__stat-value,
-  &__stat-title,
-  &__stat-text,
-  &__aside-title,
-  &__aside-text {
-    font-family: "Inter Tight", sans-serif;
-  }
-
-  &__eyebrow,
   &__aside-eyebrow {
     font-size: 16px;
     font-weight: 400;
     line-height: 1;
-    letter-spacing: -0.03em;
     color: #fff;
   }
 
@@ -73,8 +53,8 @@
   &__aside-divider {
     position: relative;
     height: 6px !important;
-    margin-top: 18px;
-    margin-bottom: 36px;
+    margin-top: 20px;
+    margin-bottom: 35px;
 
     &::before {
       content: "";
@@ -98,11 +78,12 @@
 
   &__title {
     max-width: 760px;
-    font-size: clamp(60px, 5vw, 86px);
+    font-size: var(--heading-size);
     font-weight: 500;
-    line-height: 0.94;
-    letter-spacing: -0.06em;
-    color: #ad9482;
+    line-height: 0.98;
+    letter-spacing: -0.03em;
+    color: var(--heading-color);
+    // margin-bottom: var(--heading-offset);
     text-wrap: balance;
   }
 
@@ -110,8 +91,8 @@
     display: grid;
     grid-template-columns: minmax(320px, 540px) minmax(0, 1fr);
     gap: 80px 110px;
-    margin-top: 60px;
-    align-items: start;
+    margin-top: var(--subheading-offset);
+    align-items: flex-start;
   }
 
   &__content {
@@ -129,22 +110,21 @@
 
   &__body {
     max-width: 500px;
-    margin-top: 100px;
+    margin-top: 30px;
   }
 
   &__body-text {
-    font-size: clamp(20px, 1.25vw, 24px);
+    font-size: var(--text-size);
     font-weight: 400;
     line-height: 1.04;
-    letter-spacing: -0.035em;
-    color: rgba(255, 255, 255, 0.72);
+    color: var(--text-color-grey);
 
     & + & {
       margin-top: 34px;
     }
 
     &--primary {
-      color: rgba(255, 255, 255, 0.72);
+      color: var(--text-color-grey);
     }
   }
 
@@ -152,20 +132,20 @@
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 54px 84px;
-    align-content: start;
-    padding-top: 6px;
+    align-items: flex-start;
+    margin-block-start: 0px;
   }
 
   &__stat {
     min-width: 0;
     max-width: 320px;
+    margin-block-start: 0px;
   }
 
   &__stat-value {
-    font-size: clamp(56px, 3.5vw, 78px);
+    font-size: clamp(52px, 3.5vw, 78px);
     font-weight: 400;
     line-height: 0.92;
-    letter-spacing: -0.06em;
     color: #fff;
   }
 
@@ -174,18 +154,16 @@
     font-size: clamp(28px, 2vw, 42px);
     font-weight: 400;
     line-height: 0.95;
-    letter-spacing: -0.055em;
     color: #fff;
   }
 
   &__stat-text {
     margin-top: 24px;
     max-width: 280px;
-    font-size: clamp(16px, 1vw, 18px);
+    font-size: var(--text-size);
     font-weight: 400;
     line-height: 1.06;
-    letter-spacing: -0.03em;
-    color: rgba(255, 255, 255, 0.6);
+    color: var(--text-color-grey);
   }
 
   &__bottom {
@@ -235,10 +213,9 @@
   &__aside-text {
     margin-top: 36px;
     max-width: 280px;
-    font-size: clamp(17px, 1vw, 19px);
+    font-size: var(--text-size);
     font-weight: 400;
     line-height: 1.06;
-    letter-spacing: -0.03em;
     color: rgba(255, 255, 255, 0.72);
   }
 

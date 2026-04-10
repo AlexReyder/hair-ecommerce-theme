@@ -37,12 +37,12 @@ export default defineConfig({
         entryFileNames: "js/[name]-[hash].js",
         chunkFileNames: "js/[name]-[hash].js",
         assetFileNames: (assetInfo) => {
-          const extension = path.extname(assetInfo.name ?? "");
-
-          if (extension === ".css") {
-            return "css/[name]-[hash][extname]";
+          if (/\.(gif|jpe?g|png|svg|webp|avif)$/.test(assetInfo.name ?? "")) {
+            // Сохраняем оригинальное имя без хеша
+            // Файлы попадут в assets/dist/[имя].[расширение]
+            return "[name][extname]";
           }
-
+          // Для CSS и шрифтов можно оставить стандартный путь с хешем
           return "assets/[name]-[hash][extname]";
         },
       },

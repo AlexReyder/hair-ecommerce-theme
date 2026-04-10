@@ -3,24 +3,11 @@
 
 .nh-faq {
   margin: 0 !important;
-  padding: 120px 0 140px;
+  // padding: 120px 0 140px;
+  padding-top: var(--section-spacing);
   background: #1d1d1d;
   color: #fff;
   overflow: hidden;
-
-  *,
-  *::before,
-  *::after {
-    box-sizing: border-box;
-  }
-
-  .wp-block-group,
-  p,
-  h2,
-  figure {
-    margin-top: 0;
-    margin-bottom: 0;
-  }
 
   .is-layout-constrained
     > :where(:not(.alignleft):not(.alignright):not(.alignfull)) {
@@ -30,7 +17,7 @@
   }
 
   &__shell {
-    width: min(calc(100% - 64px), 1200px);
+    width: var(--layout-width);
     margin: 0 auto;
   }
 
@@ -47,9 +34,9 @@
 
   &__divider {
     position: relative;
-    height: 6px;
-    margin-top: 18px;
-    margin-bottom: 40px;
+    height: 6px !important;
+    margin-top: 20px;
+    margin-bottom: 35px;
 
     &::before {
       content: "";
@@ -57,7 +44,7 @@
       inset: 0 auto 0 0;
       width: 74px;
       height: 6px;
-      background: $nh-color-accent;
+      background: #fff;
     }
 
     &::after {
@@ -72,23 +59,23 @@
   }
 
   &__title {
-    max-width: 640px;
+    max-width: 680px;
     font-family: "Inter Tight", sans-serif;
-    font-size: clamp(48px, 5.2vw, 72px);
+    font-size: var(--heading-size);
     font-weight: 500;
     line-height: 0.98;
-    letter-spacing: -0.05em;
-    color: #ad9482;
+    letter-spacing: -0.03em;
+    color: var(--heading-color);
+    margin-bottom: var(--heading-offset);
   }
 
   &__subtitle {
     max-width: 420px;
     margin-top: 60px;
     font-family: "Inter Tight", sans-serif;
-    font-size: clamp(16px, 1.2vw, 18px);
+    font-size: var(--text-size);
     font-weight: 400;
     line-height: 1.45;
-    letter-spacing: -0.02em;
     color: rgba(255, 255, 255, 0.55);
   }
 
@@ -111,8 +98,9 @@
   // --- Item ---
 
   &__item {
-    border: 1px solid rgba(255, 255, 255, 0.12);
-    border-radius: 20px;
+    background-color: #1f1f1f;
+    // border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: none;
     overflow: hidden;
   }
 
@@ -210,8 +198,6 @@
 
 @media (max-width: 1279px) {
   .nh-faq {
-    padding: 100px 0 120px;
-
     &__shell {
       width: min(calc(100% - 40px), 728px);
     }
@@ -254,8 +240,6 @@
 
 @media (max-width: 767px) {
   .nh-faq {
-    padding: 80px 0 100px;
-
     &__shell {
       width: calc(100% - 32px);
     }

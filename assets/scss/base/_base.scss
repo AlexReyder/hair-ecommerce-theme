@@ -1,9 +1,32 @@
-@use '../abstracts/variables' as *;
+@use "../abstracts/variables" as *;
+
+:root {
+  --bg-color: #1d1d1d;
+  --heading-color: #ad9482;
+  --heading-color-white: #fff;
+  --text-color: #fff;
+  --text-color-grey: rgba(255, 255, 255, 0.6);
+
+  --heading-size: clamp(42px, 4.5vw, 64px);
+  --subheading-size: clamp(18px, 1vw, 20px);
+  --text-size: clamp(14px, 1.2vw, 16px);
+
+  --section-spacing: 200px;
+  --heading-offset: 60px;
+  --subheading-offset: 100px;
+
+  --layout-width: min(calc(100% - 64px), 1372px);
+
+  @media (min-width: 1920px) {
+    --layout-width: min(calc(100% - 64px), 1760px);
+  }
+}
 
 body {
   margin: 0;
   background: $nh-color-bg;
   color: $nh-color-text;
+  font-family: "Inter Tight", sans-serif;
 }
 
 a {
