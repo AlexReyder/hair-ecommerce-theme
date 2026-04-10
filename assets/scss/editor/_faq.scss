@@ -8,6 +8,17 @@
 //      Gutenberg block typography defaults.
 
 .editor-styles-wrapper {
+  // Release the ACF block wrapper from theme.json's contentSize (840px)
+  // constraint so the dark FAQ section spans the full editor canvas width.
+  // The inner `.nh-faq__shell` keeps its 920px max-width via the existing
+  // override below, so the content stays compact and centred inside the
+  // wider wrapper.
+  .wp-block-acf-nh-faq {
+    max-width: none !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+
   .nh-faq {
     padding: 48px 0 60px;
     border: 1px dashed rgba(255, 255, 255, 0.18);
