@@ -51,7 +51,7 @@
     width: min(calc(100% - 64px), 1528px);
     min-height: inherit;
     margin: 0 auto;
-    padding: 27px 0 22px;
+    padding: 110px 0 22px;
     display: grid;
     grid-template-rows: auto 1fr auto;
     gap: 24px;
@@ -337,7 +337,7 @@
   .nh-home-hero {
     &__shell {
       width: min(calc(100% - 48px), 1232px);
-      padding: 28px 0 20px;
+      padding: 100px 0 20px;
 
       &::before {
         top: 2px;
@@ -434,7 +434,7 @@
   .nh-home-hero {
     &__shell {
       width: min(calc(100% - 32px), 100%);
-      padding: 26px 0 18px;
+      padding: 90px 0 18px;
       gap: 18px;
 
       &::before {

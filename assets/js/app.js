@@ -4,3 +4,4 @@ import "./home.js";
 import "./popup.js";
 import "./before-after.js";
 import "./faq.js";
+import "./header.js";
