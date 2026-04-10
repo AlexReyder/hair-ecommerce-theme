@@ -347,23 +347,40 @@ body.nh-drawer-open {
     .nh-site-header__inner {
       width: calc(100% - 32px);
       padding-top: 20px;
-      gap: 12px;
+      gap: 10px;
       align-items: center;
     }
 
     .nh-site-header__logo {
-      width: 95px;
+      width: 86px;
     }
 
     .nh-site-header__brand-accent {
       margin-top: 10px;
-      width: 70px;
+      width: 64px;
       height: 2px;
     }
 
+    .nh-site-header__actions {
+      gap: 10px;
+    }
+
     .nh-site-header__cta {
-      padding: 9px 18px;
-      font-size: 13px;
+      padding: 8px 12px;
+      font-size: 12px;
+
+      &::before {
+        margin-right: 2px;
+      }
+
+      &::after {
+        margin-left: 2px;
+      }
+    }
+
+    .nh-site-header__toggle {
+      width: 36px;
+      height: 36px;
     }
 
     .nh-site-header__drawer-panel {
